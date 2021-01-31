@@ -21,7 +21,11 @@ export class GiveAwayModel implements IGiveAway {
     return this.participants[0]
   }
 
-  async verifyPartipantShares (participants: Participant): Promise<void> {
+  verifyPartipantShares (participant: Participant): boolean {
+    if (participant.shares < 20) {
+      return false
+    }
 
+    return true
   }
 }
