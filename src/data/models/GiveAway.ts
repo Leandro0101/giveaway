@@ -1,27 +1,27 @@
 import { IGiveAway } from '../../domain/entities/giveaway'
-import { Item } from '../../domain/entities/item'
-import { Participant } from '../../domain/entities/participant'
+import { IItem } from '../../domain/entities/item'
+import { IParticipant } from '../../domain/entities/participant'
 
 export class GiveAwayModel implements IGiveAway {
-  readonly participants: Participant[] = []
+  readonly participants: IParticipant[] = []
   constructor (
     readonly id: string,
-    readonly item: Item,
+    readonly item: IItem,
     readonly date: Date
   ) {}
 
-  async addParticipant (participant: Participant): Promise<void> {
+  async addParticipant (participant: IParticipant): Promise<void> {
     this.participants.push(participant)
   }
 
-  async removeParticipant (participant: Participant): Promise<void> {
+  async removeParticipant (participant: IParticipant): Promise<void> {
   }
 
-  async draw (): Promise<Participant> {
+  async draw (): Promise<IParticipant> {
     return this.participants[0]
   }
 
-  verifyPartipantShares (participant: Participant): boolean {
+  verifyPartipantShares (participant: IParticipant): boolean {
     if (participant.shares < 20) {
       return false
     }
