@@ -1,14 +1,14 @@
-import { Item } from './item'
-import { Participant } from './participant'
+import { IItem } from './item'
+import { IParticipant } from './participant'
 
 export interface IGiveAway {
   id: string
-  item: Item
-  participants: Participant[]
+  item: IItem
+  participants: IParticipant[]
   date: Date
 
-  addParticipant: (participant: Participant) => Promise<void>
-  removeParticipant: (participant: Participant) => Promise<void>
-  draw: () => Promise<Participant>
-  verifyPartipantShares: (participants: Participant) => boolean
+  addParticipant: (participant: IParticipant) => Promise<void>
+  removeParticipant: (participant: IParticipant) => Promise<void>
+  draw: () => Promise<IParticipant>
+  verifyPartipantShares: (participants: IParticipant) => boolean
 }

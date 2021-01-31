@@ -6,8 +6,8 @@ export class GiveAwayModel implements IGiveAway {
   readonly participants: IParticipant[] = []
   constructor (
     readonly id: string,
-    readonly item: IItem,
-    readonly date: Date
+    public item: IItem,
+    public date: Date
   ) {}
 
   async addParticipant (participant: IParticipant): Promise<void> {
