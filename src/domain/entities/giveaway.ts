@@ -2,6 +2,7 @@ import { Item } from './item'
 import { Participant } from './participant'
 
 export interface IGiveaway {
+  id: string
   item: Item
   participants: Participant[]
   date: Date
