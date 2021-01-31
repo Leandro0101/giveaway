@@ -5,7 +5,7 @@ import { IAddParticipantToGiveAway } from '../../domain/usecases/addParticipantT
 export class AddParticipantToGiveAwayService implements IAddParticipantToGiveAway {
   constructor (private readonly giveaway: IGiveAway) { }
   async execute (participant: Participant): Promise<Participant | undefined> {
-    if (participant.shares < 20) {
+    if (!this.giveaway.verifyPartipantShares(participant)) {
       throw new Error('Shares number must be greater or equal than 20')
     }
 
