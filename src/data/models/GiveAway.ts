@@ -3,10 +3,10 @@ import { Item } from '../../domain/entities/item'
 import { Participant } from '../../domain/entities/participant'
 
 export class GiveAwayModel implements IGiveAway {
+  readonly participants: Participant[] = []
   constructor (
     readonly id: string,
     readonly item: Item,
-    readonly participants: Participant[],
     readonly date: Date
   ) {}
 
