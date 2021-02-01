@@ -1,5 +1,5 @@
-import { Participant } from '../entities/participant'
+import { IParticipant } from '../entities/participant'
 
 export interface IRemoveParticipantFromGiveAway {
-  execute: (participant: Participant) => Promise<void>
+  execute: (participant: IParticipant) => Promise<void>
 }

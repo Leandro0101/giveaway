@@ -1,5 +1,5 @@
-import { GiveAwayModel } from '../models/GiveAway'
-import { ParticipantModel } from '../models/Participant'
+import { GiveAwayModel } from '../../models/GiveAway'
+import { ParticipantModel } from '../../models/Participant'
 import { AddParticipantToGiveAwayService } from './AddParticipantToGiveAway'
 
 describe('add participant to giveaway', () => {

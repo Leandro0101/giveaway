@@ -8,7 +8,7 @@ export class GiveAwayModel implements IGiveAway {
     readonly id: string,
     public item: IItem,
     public date: Date
-  ) {}
+  ) { }
 
   async addParticipant (participant: IParticipant): Promise<void> {
     this.participants.push(participant)
