@@ -1,5 +1,5 @@
-import { Participant } from '../entities/participant'
+import { IParticipant } from '../entities/participant'
 
 export interface IAddParticipantToGiveAway {
-  execute: (participant: Participant) => Promise<Participant | undefined>
+  execute: (participant: IParticipant) => Promise<IParticipant | undefined>
 }

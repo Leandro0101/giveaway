@@ -1,5 +1,5 @@
-import { Participant } from '../entities/participant'
+import { IParticipant } from '../entities/participant'
 
 export interface IFindAllParticipants {
-  execute: () => Promise<Participant[]>
+  execute: () => Promise<IParticipant[]>
 }

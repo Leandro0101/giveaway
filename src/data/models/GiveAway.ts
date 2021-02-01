@@ -1,6 +1,6 @@
-import { IGiveAway } from '../../domain/entities/giveaway'
-import { IItem } from '../../domain/entities/item'
-import { IParticipant } from '../../domain/entities/participant'
+import { IGiveAway } from '@domain/entities/giveaway'
+import { IItem } from '@domain/entities/item'
+import { IParticipant } from '@domain/entities/participant'
 
 export class GiveAwayModel implements IGiveAway {
   readonly participants: IParticipant[] = []
