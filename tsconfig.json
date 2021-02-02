@@ -12,6 +12,7 @@
     "emitDecoratorMetadata": true,
     "baseUrl": "./",
     "paths": {
+      "@/*": ["./*"],
       "@domain/*": ["src/domain/*"]
     }   
   }
