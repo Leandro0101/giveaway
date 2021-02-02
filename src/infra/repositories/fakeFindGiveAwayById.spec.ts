@@ -8,4 +8,9 @@ describe('Find GiveAway By Id', () => {
     const response = sut.findById('XPA01')
     expect(response).toEqual(giveawayDataSource[0])
   })
+
+  test('Should return undefined if giveway not found', async () => {
+    const response = sut.findById('XPA010')
+    expect(response).toEqual(undefined)
+  })
 })
