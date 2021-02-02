@@ -4,7 +4,7 @@ import { IAddParticipantToGiveAway } from '@domain/usecases/addParticipantToGive
 
 export class AddParticipantToGiveAwayService implements IAddParticipantToGiveAway {
   constructor (private readonly giveaway: IGiveAway) { }
-  async execute (participant: IParticipant): Promise<IParticipant | undefined> {
+  async execute (giveaway: IGiveAway, participant: IParticipant): Promise<IParticipant | undefined> {
     if (!this.giveaway.verifyPartipantShares(participant)) {
       return undefined
     }

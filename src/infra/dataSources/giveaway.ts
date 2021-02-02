@@ -1,25 +1,11 @@
-// import { IGiveAway } from '@domain/entities/giveaway'
-// import { GiveAwayModel } from 'src/data/models/GiveAway'
+import { IGiveAway } from '@domain/entities/giveaway'
+import { GiveAwayModel } from '@/src/data/models/GiveAway'
+import { itemDataSource } from './item'
 
-// export const giveawayDataSource: IGiveAway[] = [
-//   {
-//     id: 'HPT002',
-//     {
-
-//     }
-//   }
-// ]
-
-// const giveaway1 = new GiveAwayModel('HPT002',
-// {
-//   id: 'XUA002',
-//   name: 'TV de plasma',
-//   description: 'TV seminova',
-//   imgUrl: 'https://www.android.com/static/2016/img/devices/tvs/transparent/sharp-aquos_1x.png'
-// },
-// new Date())
-
-// id: string
-// item: IItem
-// participants: IParticipant[]
-// date: Date
+const giveaway1 = new GiveAwayModel('XPA01', itemDataSource[0], new Date('26/02/2021'))
+const giveaway2 = new GiveAwayModel('XPA02', itemDataSource[1], new Date('06/03/2021'))
+const giveaway3 = new GiveAwayModel('XPA03', itemDataSource[2], new Date('06/04/2021'))
+const giveaway4 = new GiveAwayModel('XPA04', itemDataSource[3], new Date('15/05/2021'))
+export const giveawayDataSource: IGiveAway[] = [
+  giveaway1, giveaway2, giveaway3, giveaway4
+]
