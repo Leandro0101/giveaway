@@ -9,11 +9,11 @@ export class AddParticipantToGiveAwayService implements IAddParticipantToGiveAwa
     private readonly addParticipantToGiveAwayRepository: IAddParticipantToGiveAwayRepository
   ) { }
 
-  async execute (giveawayId: string, participant: IParticipant): Promise<IParticipant | undefined> {
+  async execute (giveawayId: string, participant: IParticipant): Promise<IParticipant | null> {
     const giveaway = await this.findGiveAwayById.findById(giveawayId)
 
     if (!giveaway) {
-      throw new Error('giveaway not found')
+      return null
     }
 
     await this.addParticipantToGiveAwayRepository.addParticipant(giveaway, participant)

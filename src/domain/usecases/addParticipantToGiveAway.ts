@@ -4,5 +4,5 @@ export interface IAddParticipantToGiveAway {
   execute: (
     id: string,
     participant: IParticipant
-  ) => Promise<IParticipant | undefined>
+  ) => Promise<IParticipant | null>
 }
