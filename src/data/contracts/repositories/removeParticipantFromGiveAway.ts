@@ -1,5 +1,6 @@
+import { IGiveAway } from '@/src/domain/entities/giveaway'
 import { IParticipant } from '@domain/entities/participant'
 
 export interface IRemoveParticipantFromGiveAwayRepository {
-  removeParticipant: (participant: IParticipant) => Promise<void>
+  removeParticipant: (giveaway: IGiveAway, participant: IParticipant) => Promise<void>
 }
