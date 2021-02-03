@@ -22,4 +22,10 @@ describe('add participant to giveaway', () => {
     const response = await sut.execute('XPA01', participant)
     expect(response).toBe(participant)
   })
+
+  test('Should return null if giveaway not exist', async () => {
+    const participant = new ParticipantModel('098f6bcd4621d373cade4e832627b4f6', 19, 'Leandro', 'leandro@gmail.com')
+    const response = await sut.execute('XPA0L', participant)
+    expect(response).toBe(null)
+  })
 })
