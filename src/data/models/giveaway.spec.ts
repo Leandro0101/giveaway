@@ -12,4 +12,9 @@ describe('test giveaway methods', () => {
     await sut.addParticipant(participant)
     expect(sut.participants.length).toBe(1)
   })
+
+  test('Should remove the participant from giveaway', async () => {
+    await sut.removeParticipant(participant)
+    expect(sut.participants.length).toBe(0)
+  })
 })
