@@ -5,7 +5,7 @@ import { IParticipant } from '@domain/entities/participant'
 export class GiveAwayModel implements IGiveAway {
   readonly participants: IParticipant[] = []
   constructor (
-    readonly id: string,
+    public readonly id: string,
     public item: IItem,
     public date: Date
   ) { }
@@ -15,6 +15,11 @@ export class GiveAwayModel implements IGiveAway {
   }
 
   async removeParticipant (participant: IParticipant): Promise<void> {
+    for (let i = 0; i < this.participants.length; i++) {
+      if (this.participants[i].id === participant.id) {
+        this.participants.splice(i, 1)
+      }
+    }
   }
 
   async draw (): Promise<IParticipant> {
